@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Birth Weight form</title>
+</head>
+<body>
+    <h1>
+        Predict birth weight of your child
+    </h1>
+    <form method="POST" action="/predict">
+    <label>Gestation</label><br>
+    <input name="gestation" type="number"><br>
+
+    <label>Parity</label><br>
+    <input name="parity" type="number"><br>
+
+    <label> Age</label><br>
+    <input name="age" type="number"><br>
+
+    <label> Height</label><br>
+    <input name="height" type="number"><br>
+
+    <label> Weight</label><br>
+    <input name="weight" type="number"><br>
+
+    <label> Smoke</label><br>
+    <input name="smoke" type="number"><br>
+    
+    <button type="Predict birth weight">Submit</button>
+    </form> 
+
+    <h3>Predicted Birth weight is {{prediction}}</h3>
+</body>
+</html>
