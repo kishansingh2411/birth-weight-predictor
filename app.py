@@ -36,7 +36,7 @@ def get_prediction():
 
     
 # load machine learnig model
-    with open('model/model.pkl','rb') as f :
+    with open('model.pkl','rb') as f :
         model= pickle.load(f)
 
 # make prediction on user data
