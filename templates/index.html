@@ -5,7 +5,6 @@
     <title>Birth Weight Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Base Styles */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,6 +32,16 @@
             color: #1f2937;
         }
 
+        .field {
+            margin-bottom: 1.2rem;
+        }
+
+        .description {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 0.2rem;
+        }
+
         label {
             font-weight: 600;
             display: block;
@@ -44,7 +53,6 @@
             padding: 0.5rem;
             border: 1px solid #d1d5db;
             border-radius: 6px;
-            margin-bottom: 1rem;
             transition: border-color 0.2s;
         }
 
@@ -63,6 +71,7 @@
             border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.2s;
+            margin-top: 1rem;
         }
 
         button:hover {
@@ -80,27 +89,47 @@
     <div class="wrapper">
         <h1>Predict Birth Weight of Your Child</h1>
         <form method="POST" action="/predict">
-            <label for="gestation">Gestation</label>
-            <input name="gestation" type="number" id="gestation">
+            
+            <div class="field">
+                <div class="description">Gestation period in days</div>
+                <label for="gestation">Gestation</label>
+                <input name="gestation" type="number" id="gestation">
+            </div>
 
-            <label for="parity">Parity</label>
-            <input name="parity" type="number" id="parity">
+            <div class="field">
+                <div class="description">Number of previous pregnancies</div>
+                <label for="parity">Parity</label>
+                <input name="parity" type="number" id="parity">
+            </div>
 
-            <label for="age">Age</label>
-            <input name="age" type="number" id="age">
+            <div class="field">
+                <div class="description">Age of the mother (in years)</div>
+                <label for="age">Age</label>
+                <input name="age" type="number" id="age">
+            </div>
 
-            <label for="height">Height</label>
-            <input name="height" type="number" id="height">
+            <div class="field">
+                <div class="description">Height of the mother (in inches)</div>
+                <label for="height">Height</label>
+                <input name="height" type="number" id="height">
+            </div>
 
-            <label for="weight">Weight</label>
-            <input name="weight" type="number" id="weight">
+            <div class="field">
+                <div class="description">Pre-pregnancy weight (in lbs)</div>
+                <label for="weight">Weight</label>
+                <input name="weight" type="number" id="weight">
+            </div>
 
-            <label for="smoke">Smoke</label>
-            <input name="smoke" type="number" id="smoke">
+            <div class="field">
+                <div class="description">Smoking status: 1 if smokes, 0 if not</div>
+                <label for="smoke">Smoke</label>
+                <input name="smoke" type="number" id="smoke">
+            </div>
 
             <button type="submit">Predict Birth Weight</button>
         </form>
-        <h3>Predicted Birth Weight is {{prediction}} grms</h3>
+
+        <h3>Predicted Birth Weight is {{prediction}}</h3>
     </div>
 </body>
 </html>
